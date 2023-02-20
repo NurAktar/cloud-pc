@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud-PC</title>
+    <link rel="stylesheet" href="main-style.css">
+</head>
+<body>
+    <div ondblclick="prevent(this)" onmousedown="clicked_icon_field()" id="icon-field" class="icon-field">
+        <div id="f1" ondblclick="dblclicked_icon(this)" onmouseup="clicked_icon(this)" class="icon-container">
+            <div class="icon-img"></div>
+            <input type="text" value="new folder" class="icon-text">
+        </div>
+    </div>
+</body>
+<script>
+    var selected_id ="";
+    function clicked_icon_field(){
+        document.getElementById(selected_id).style = "background-color:none;";
+        selected_id = "";
+    }
+    function clicked_icon(e){
+        id = e.id;
+        document.getElementById(id).style="background-color:#273d8118;";
+        selected_id = id;
+    }
+    document.addEventListener("dblclick",function(e){e.preventDefault()})
+</script>
+</html>
