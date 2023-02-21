@@ -11,7 +11,7 @@
     <div ondblclick="prevent(this)" onmousedown="clicked_icon_field()" id="icon-field" class="icon-field">
         <div id="f1" ondblclick="dblclicked_icon(this)" onmouseup="clicked_icon(this)" class="icon-container">
             <div class="icon-img"></div>
-            <input type="text" value="new folder" class="icon-text">
+            <input onclick="icon_text(this)" type="text" value="new folder" id="icon_text" class="icon-text">
         </div>
     </div>
 </body>
@@ -23,8 +23,13 @@
     }
     function clicked_icon(e){
         id = e.id;
-        document.getElementById(id).style="background-color:#273d8118;";
+        document.getElementById(id).style="background-color:#90add761;";
         selected_id = id;
+    }
+    function icon_text(e){
+        id = e.id;
+        setTimeout(function run(){alert("hi")},1000);
+        document.getElementById(id).disabled = "true";
     }
     document.addEventListener("dblclick",function(e){e.preventDefault()})
 </script>

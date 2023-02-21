@@ -5,7 +5,7 @@ html,*{
 }
 body{
     background-color: rgb(49, 32, 10);
-    background-image: url("image/bg.jpg");
+    background-image: url("image/dark-bg.jpg");
     background-size:cover;
 }
 .icon-field{
@@ -26,10 +26,10 @@ body{
     background-color: none;
 }
 .icon-container:hover{
-    background-color: #273d8118;
+    background-color: #b6cbe941;
 }
 .icon-container:active{
-    background-color: #273c7c31;
+    background-color: #90add761;
 }
 .icon-img{
     background-color: none;
