@@ -60,3 +60,12 @@ body{
     background-color: rgb(255, 255, 255);
     color:black;
 }
+
+
+.start-bar{
+    display: flex;
+    justify-self: flex-end;
+    height: 30px;
+    width: 100%;
+    background-color: rgb(54, 54, 54);
+}

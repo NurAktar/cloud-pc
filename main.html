@@ -8,18 +8,25 @@
     <link rel="stylesheet" href="main-style.css">
 </head>
 <body>
-    <div ondblclick="prevent(this)" onmousedown="clicked_icon_field()" id="icon-field" class="icon-field">
+    <div onmousedown="clicked_icon_field()" id="icon-field" class="icon-field">
         <div id="f1" ondblclick="dblclicked_icon(this)" onmouseup="clicked_icon(this)" class="icon-container">
             <div class="icon-img"></div>
-            <input onclick="icon_text(this)" type="text" value="new folder" id="icon_text" class="icon-text">
+            <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="new folder" id="icon_text" class="icon-text">
+        </div>
+        <div class="start-bar">
+            
         </div>
     </div>
 </body>
+
+
 <script>
     var selected_id ="";
     function clicked_icon_field(){
-        document.getElementById(selected_id).style = "background-color:none;";
-        selected_id = "";
+        if(selected_id != ""){
+            document.getElementById(selected_id).style = "background-color:none;";
+            selected_id = "";
+        }
     }
     function clicked_icon(e){
         id = e.id;
@@ -27,9 +34,17 @@
         selected_id = id;
     }
     function icon_text(e){
-        id = e.id;
-        setTimeout(function run(){alert("hi")},1000);
-        document.getElementById(id).disabled = "true";
+        // id = e.id;
+        // document.getElementById(id).ariaDisabled='True';
+        // alert("clicked");
+        // setTimeout(function run(){alert("hi")},1000);
+        // document.getElementById(id).disabled="false";
+    }
+    function enter(event){
+        if(event.keyCode === 13){
+            id=event.target.id;
+            document.getElementById(id).blur();
+        }
     }
     document.addEventListener("dblclick",function(e){e.preventDefault()})
 </script>
