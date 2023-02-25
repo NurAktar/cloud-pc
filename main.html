@@ -13,7 +13,7 @@
             <div class="item">New Folder</div>
             <div class="hr"></div>
             <div class="item">Get info</div>
-            <div class="item">Change Background</div>
+            <div class="item" id="cbg">Change Background</div>
             <div class="hr"></div>
             <div class="item">Sort By</div>
             <div class="item">Copy</div>
@@ -31,10 +31,44 @@
             <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
             <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
         </div>
+        <!-- <div class="window_box">
+            <div class="window_bar">
+                <div class="win_button">
+                    <div class="close"></div>
+                    <div class="max"></div>
+                    <div class="min"></div>
+                </div>
+            </div>
+        </div> -->
+        <div class="cbg_box window_box" id="window_box">
+            <div class="window_bar" id="window_boxheader">
+                <div class="win_button">
+                    <div onclick="closetask('cbg_box window_box')" class="close"></div>
+                    <div class="max"></div>
+                    <div class="min"></div>
+                </div>
+            </div>
+            <div class="separator">
+                <div class="s1">
+                    Set Background
+                </div>
+                <div class="s2">
+                    <div style="background-image:url('/image/macos-1920.jpg')" data-img="/image/macos-1920.jpg" onclick="set_wallpaper(this)" class="box"></div>
+                    <div style="background-image:url('/image/bg.jpg')" data-img="/image/bg.jpg" onclick="set_wallpaper(this)" class="box"></div>
+                    <div style="background-image:url('/image/dark-bg.jpg')" data-img="/image/dark-bg.jpg" onclick="set_wallpaper(this)" class="box"></div>
+                    <div style="background-image:url('/image/dark-bg.jpg')" data-img="/image/dark-bg.jpg" onclick="set_wallpaper(this)" class="box"></div>
+                    <div style="background-image:url('/image/dark-bg.jpg')" data-img="/image/dark-bg.jpg" onclick="set_wallpaper(this)" class="box"></div>
+                    <div style="background-image:url('/image/dark-bg.jpg')" data-img="/image/dark-bg.jpg" onclick="set_wallpaper(this)" class="box"></div>
+                    <div style="background-image:url('/image/dark-bg.jpg')" data-img="/image/dark-bg.jpg" onclick="set_wallpaper(this)" class="box"></div>
+                </div>
+            </div>
+        </div>
+        <!-- startbar -->
         <div class="start-bar">
             <div class="start-menu"></div>
         </div>
     </div>
 </body>
 <script src="main.js"></script>
+<script src="dragable.js"></script>
 </html>

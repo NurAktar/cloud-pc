@@ -1,3 +1,4 @@
+// icon select
 var selected_id ="";
 function clicked_icon_field(){
     if(selected_id != ""){
@@ -50,8 +51,20 @@ scope.addEventListener("contextmenu",(e) => {
         }
     });
 });
-// context-menu ended
-document.addEventListener("click",(e) => {
-    console.log(contextMenu.offsetWidth);
-    console.log(contextMenu.offsetHeight);
+//window close fun
+function closetask(classid){
+    document.getElementsByClassName(classid)[0].classList.remove("visible");
+}
+
+//change background
+document.getElementById("cbg").addEventListener("click",()=>{
+    contextMenu.classList.remove("visible");
+    cbg = document.getElementsByClassName("cbg_box window_box")[0];
+    setTimeout(() => {
+        cbg.classList.add("visible");
+    });
 });
+
+function set_wallpaper(e){
+    document.body.style="background-image:url('"+e.getAttribute('data-img')+"');"
+}
