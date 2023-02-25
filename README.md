@@ -1,6 +1,6 @@
 # cloud-pc
 This is an open source project.
-A web os for all around the world.
+A web os for all around the world.<br>
 Live demo: https://nuraktar.github.io/cloud-pc/main.html
 <hr/>
 screenshot:
