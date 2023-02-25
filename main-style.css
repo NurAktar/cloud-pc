@@ -33,7 +33,7 @@ body{
 }
 .icon-img{
     background-color: none;
-    background-image: url("image/folder2.ico");
+    background-image: url("image/icon/blue/folder.ico");
     background-size:contain;
     background-repeat: no-repeat;
     background-position-x:50%;
@@ -71,9 +71,15 @@ body{
     background-color: rgb(54, 54, 54);
 }
 .start-menu{
-    width: 40px;
+    width: 37px;
     height: 100%;
-    background-image: url("image/start.png");
+    background-image: url("image/Nexus.png");
     background-size: cover;
     background-position-y: top;
+}
+.start-menu:hover{
+    background-position-y: center;
+}
+.start-menu:active{
+    background-position-y: bottom;
 }
