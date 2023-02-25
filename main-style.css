@@ -61,11 +61,19 @@ body{
     color:black;
 }
 
-
+/*start-bar */
 .start-bar{
-    display: flex;
-    justify-self: flex-end;
+    position: absolute;
+    left: 0;
+    bottom: 0;
     height: 30px;
     width: 100%;
     background-color: rgb(54, 54, 54);
+}
+.start-menu{
+    width: 40px;
+    height: 100%;
+    background-image: url("image/start.png");
+    background-size: cover;
+    background-position-y: top;
 }
