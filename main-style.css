@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&family=Roboto&display=swap');
 html,*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 body{
-    background-color: rgb(49, 32, 10);
-    background-image: url("image/dark-bg.jpg");
+    font-family: 'Josefin Sans';
+    background-color: rgb(0 126 255);
+    background-image: url("image/macos-1920.jpg");
     background-size:cover;
 }
 .icon-field{
@@ -13,7 +15,6 @@ body{
     width: 100vw;
     height: 100vh;
     padding: 3px 2px;
-    /* background-color: aquamarine; */
 }
 .icon-container{
     display: flex;
@@ -26,10 +27,10 @@ body{
     background-color: none;
 }
 .icon-container:hover{
-    background-color: #b6cbe941;
+    background-color: #7792b87a;
 }
 .icon-container:active{
-    background-color: #90add761;
+    background-color: #5183ca93;
 }
 .icon-img{
     background-color: none;
@@ -41,9 +42,9 @@ body{
     height: 40px;
     border: none;
     outline: none;
-    
 }
 .icon-text{
+    font-family: 'Josefin Sans';
     width: 90%;
     height: 15px;
     background-color: rgba(0, 0, 0, 0);
@@ -68,7 +69,8 @@ body{
     bottom: 0;
     height: 30px;
     width: 100%;
-    background-color: rgb(54, 54, 54);
+    background-color: rgba(61, 61, 61, 0.781);
+    backdrop-filter: blur(10px);
 }
 .start-menu{
     width: 37px;
@@ -82,4 +84,41 @@ body{
 }
 .start-menu:active{
     background-position-y: bottom;
+}
+
+/* context menu */
+#context-menu{
+    position: fixed;
+    z-index: 100;
+    width: 170px;
+    padding: 7px 5px;
+    background: #ffffffd2;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    transform: scale(0);
+    transform-origin: top left;
+    box-shadow: 2px 2px 20px -10px;
+}
+#context-menu.visible{
+    transform: scale(1);
+    transition: transform 150ms ease-in-out;
+}
+#context-menu .item{
+    padding:3px 15px;
+    font-size: 14px;
+    font-family: 'Roboto';
+    color:#222121;
+    cursor: default;
+    border-radius: inherit;
+}
+#context-menu .item:hover{
+    background: #43b4ff;
+    background-image: radial-gradient(#0199ff, #3586ff);
+    color: #ffffff;
+}
+.hr{
+    width: 90%;
+    height: 1px;
+    margin: 5px auto;
+    background-color: rgba(78, 78, 78, 0.116);
 }
