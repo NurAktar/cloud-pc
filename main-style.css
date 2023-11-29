@@ -10,6 +10,7 @@ body{
     background-image: url("image/macos-1920.jpg");
     background-size:cover;
     transition-duration: 300ms;
+    overflow: hidden;
 }
 .icon-field{
     user-select: none;
