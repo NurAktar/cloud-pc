@@ -2,26 +2,32 @@
 var selected_id ="";
 function clicked_icon_field(){
     if(selected_id != ""){
-        document.getElementById(selected_id).style = "background-color:none;";
+        document.getElementById(selected_id).style.backgroundColor = "transparent";
         selected_id = "";
     }
 }
 function clicked_icon(e){
     id = e.id;
-    document.getElementById(id).style="background-color:#ffffff5b;";
+    document.getElementById(id).style.backgroundColor="#ffffff5b";
     selected_id = id;
 }
 function icon_text(e){
-    // id = e.id;
-    // document.getElementById(id).ariaDisabled='True';
+    id = e.id;
+    // alert(id)
+    document.getElementById(id).ariaDisabled='True';
     // alert("clicked");
-    // setTimeout(function run(){alert("hi")},1000);
-    // document.getElementById(id).disabled="false";
+    setTimeout(function run(){
+        document.getElementById(id).disabled="false";
+    },1000);
+    
 }
 function enter(event){
     if(event.keyCode === 13){
         id=event.target.id;
         document.getElementById(id).blur();
+    }
+    if(event.keyCode === 113){
+        alert("f2");
     }
 }
 document.addEventListener("dblclick",function(e){e.preventDefault()})
