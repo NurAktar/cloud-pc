@@ -17,6 +17,7 @@ body{
     width: 100vw;
     height: 100vh;
     padding: 3px 2px;
+    z-index: 1;
 }
 .icon-container{
     display: flex;
@@ -30,6 +31,7 @@ body{
     background-color: none;
     border-radius: 2px;
     border: solid transparent 1px;
+    z-index: 2;
 }
 .icon-container:hover{
     background-color: #ffffff2c;
@@ -128,6 +130,38 @@ body{
     height: 1px;
     margin: 5px auto;
     background-color: rgba(78, 78, 78, 0.116);
+}
+/* foldermenu */
+
+/* context menu */
+#folder-menu{
+    position: fixed;
+    z-index: 100;
+    width: 170px;
+    padding: 7px 5px;
+    background: #ffffffd2;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+    transform: scale(0);
+    transform-origin: top left;
+    box-shadow: 2px 2px 20px -10px;
+}
+#folder-menu.visible{
+    transform: scale(1);
+    transition: transform 150ms ease-in-out;
+}
+#folder-menu .item{
+    padding:3px 15px;
+    font-size: 14px;
+    font-family: 'Roboto';
+    color:#222121;
+    cursor: default;
+    border-radius: inherit;
+}
+#folder-menu .item:hover{
+    background: #43b4ff;
+    background-image: radial-gradient(#0199ff, #3586ff);
+    color: #ffffff;
 }
 
 /* window box minimal */

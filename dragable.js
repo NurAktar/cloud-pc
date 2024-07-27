@@ -82,26 +82,27 @@ function dragIcon(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
     //fit icon to grid area
-    console.log(Math.floor((elmnt.offsetLeft-pos1)/80));
-    console.log(Math.floor((elmnt.offsetTop - pos2)/70));
     elmnt.style.top = Math.floor((e.clientY)/70)*70 + "px";
     elmnt.style.left = Math.floor((e.clientX)/80)*80 + "px";
-    //testing
+    //reset pos
     //elmnt.style.top = (eposY) + "px";
     //elmnt.style.left = (eposX) + "px";
   }
 }
 
+// initial auto sort folders:
 const iconNumber = document.getElementsByClassName("icon-container").length;
 let column = Math.ceil(iconNumber/(Math.floor((document.body.scrollHeight-30)/70)));
 let row = Math.floor((document.body.scrollHeight-30)/70);
-console.log(column);
-console.log(row);
 let temp = 0;
+let count = 0;
 for (let c = 0; c < column; c++) {
   for (let i = 1; i <= row; i++) {
+    count=count+1;
+    if(count > iconNumber)
+      break;
     if(i==1){
-      document.getElementById("f"+(i+temp)).style.top = 4+"px";
+      document.getElementById("f"+(i+temp)).style.top = 0+"px";
     }
     else{
       document.getElementById("f"+(i+temp)).style.top = 70*(i-1)+"px";
@@ -110,3 +111,5 @@ for (let c = 0; c < column; c++) {
   }
   temp = temp + row;
 }
+
+//save pos of desktop folders: later with sql!
