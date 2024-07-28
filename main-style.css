@@ -3,6 +3,7 @@ html,*{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    cursor: url("Aero.cur"),auto;
 }
 body{
     font-family: 'Josefin Sans';
@@ -17,7 +18,6 @@ body{
     width: 100vw;
     height: 100vh;
     padding: 3px 2px;
-    z-index: 1;
 }
 .icon-container{
     display: flex;
@@ -31,7 +31,6 @@ body{
     background-color: none;
     border-radius: 2px;
     border: solid transparent 1px;
-    z-index: 2;
 }
 .icon-container:hover{
     background-color: #ffffff2c;

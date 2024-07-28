@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Zain:wght@400&display=swap');
+
+#terminal{
+    position:absolute;
+    z-index: 1;
+    font-family: zain;
+}
+#terminalheader span{
+    position: relative;
+    left: 190px;
+} 
+#terminal .Buttons {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    position: relative;
+    top: 6px;
+    left: 10px;
+    background-color: #ff0011;
+    border-color: #9d252b;
+    display: inline-block;
+}
+#terminal .Buttons:hover{
+    filter: contrast(1.5) saturate(1.5);
+}
+
+#terminal .Minimize {
+    left: 15px;
+    background-color: #ffc100;
+    border-color: #9d802c;
+}
+
+#terminal .Zoom {
+    left: 21px;
+    background-color: #00d742;
+    border-color: #049931;
+}
+
+#terminal .Menu {
+    z-index: 10;
+    width: 550px;
+    box-sizing: border-box;
+    height: 25px;
+    /* background-color: #bbb; */
+    background-color: #ffeaea;
+    margin: 0 auto;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+
+#terminal .Screen {
+    cursor:auto;
+    /* background-color: #151515; */
+    background-color: #151515b5;
+    backdrop-filter: blur(3px);
+    box-sizing: border-box;
+    width: 550px;
+    height: 400px;
+    margin: 0 auto;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* code starting here */
+#terminal textarea{
+    cursor: text;
+    width:100%;
+    height: 100%;
+    background: none;
+    color: rgb(30, 255, 0);
+    outline: none;
+    border:none;
+    resize: none;
+    font-family: zain;
+    font-size: 24px;
+    font-weight: 400;
+    caret-shape: block;
+}

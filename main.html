@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cloud-PC</title>
     <link rel="stylesheet" href="main-style.css">
+    <link rel="stylesheet" href="terminal/cli-style.css">
 </head>
 <body>
     <div onmousedown="clicked_icon_field()" id="icon-field" class="icon-field" oncontextmenu="contextHandler(event)">
+        <!-- internal OS Tools and apps -->
+         <!-- desktop contextmenu -->
         <div id="context-menu">
             <div class="item">New Folder</div>
             <div class="hr"></div>
@@ -23,6 +26,7 @@
             <div class="item">Open in Terminal</div>
             <div class="item">Properties</div>
         </div>
+        <!-- folder contextmenu -->
         <div id="folder-menu">
             <div onclick="rename()" class="item">Rename</div>
             <div class="hr"></div>
@@ -32,6 +36,20 @@
             <div class="item">Open in Terminal</div>
             <div class="item">Properties</div>
         </div>
+        <!-- terminal UI -->
+        <div id="terminal">
+            <div id="terminalheader" class=Menu>
+              <div onclick="terminalClose()" class="Buttons Close"></div>
+              <div class="Buttons Minimize"></div>
+              <div class="Buttons Zoom"></div>
+              <span>Terminal</span>
+            </div>
+            <div class="Screen">
+              <!-- <p class="line4">><span class="cursor4">_</span></p> -->
+              <textarea name="" id="console" spellcheck="false">Console:~$ </textarea>
+            </div>
+        </div>
+        <!-- Internal OS Tools and Apps -->
         <div id="f1" oncontextmenu="folderfun(event)" ondblclick="dblclicked_icon(this)" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
             <div class="icon-img" style="background-image: url('image/icon/blue/user-home.ico')"></div>
             <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Home" disabled id="icon_text" class="icon-text">
@@ -40,42 +58,15 @@
             <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
             <input onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
         </div>
-        <div id="f3" oncontextmenu="folderfun(event)" ondblclick="dblclicked_icon(this)" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
-            <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
-            <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
+        <div id="f3" oncontextmenu="folderfun(event)" ondblclick="terminalOpen()" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
+            <div class="icon-img" style="background-image: url('Terminal_22445.ico')"></div>
+            <input onkeypress="enter(event)" type="text" value="Terminal" disabled id="icon_text" class="icon-text">
         </div>
-        <div id="f4" oncontextmenu="folderfun(event)" ondblclick="dblclicked_icon(this)" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
-            <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
-            <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
-        </div>
-        <div id="f5" oncontextmenu="folderfun(event)" ondblclick="dblclicked_icon(this)" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
-            <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
-            <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
-        </div>
-        <div id="f6" oncontextmenu="folderfun(event)" ondblclick="dblclicked_icon(this)" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
-            <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
-            <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
-        </div>
-        <div id="f7" oncontextmenu="folderfun(event)" ondblclick="dblclicked_icon(this)" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
-            <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
-            <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
-        </div>
-        <div id="f8" oncontextmenu="folderfun(event)" ondblclick="dblclicked_icon(this)" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
-            <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
-            <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
-        </div>
-        <div id="f9" oncontextmenu="folderfun(event)" ondblclick="dblclicked_icon(this)" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
-            <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
-            <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
-        </div>
-        <div id="f10" oncontextmenu="folderfun(event)" ondblclick="dblclicked_icon(this)" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
-            <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
-            <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
-        </div>
-        <div id="f11" oncontextmenu="folderfun(event)" ondblclick="dblclicked_icon(this)" onmouseenter="dragIcon(this)" onmouseup="clicked_icon(this)" class="icon-container">
-            <div class="icon-img" style="background-image: url('image/icon/blue/folder-documents.ico')"></div>
-            <input onclick="icon_text(this)" onkeypress="enter(event)" type="text" value="Documents" id="icon_text" class="icon-text">
-        </div>
+      
+
+
+
+
         <!-- <div class="window_box">
             <div class="window_bar">
                 <div class="win_button">
@@ -116,4 +107,6 @@
 </body>
 <script src="main.js"></script>
 <script src="dragable.js"></script>
+<script src="terminal/process.js"></script>
+<script src="terminal/script.js"></script>
 </html>
