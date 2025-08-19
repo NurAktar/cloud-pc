@@ -36,3 +36,11 @@ function terminalClose(){
 function terminalOpen(){
     tm.style.display = "block";
 }
+
+document.getElementById("window_boxheader").addEventListener("focus",(event)=>{
+    document.getElementById("window_box").style.zIndex = "5";
+})
+document.getElementById("window_box").addEventListener("focus",(event)=>{
+    event.target.style.zIndex = "5";
+})
+ 
